@@ -1,7 +1,7 @@
 import UserDetails from './UserDetails';
 
 function UserInfo() {
-  return <UserDetails />;
+  return <UserDetails />; // ❌ no more props
 }
 
 export default UserInfo;
