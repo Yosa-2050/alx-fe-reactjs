@@ -1,7 +1,7 @@
-import UserDetails from './UserDetails';
+import UserProfile from './UserProfile';
 
 function UserInfo() {
-  return <UserDetails />; // ❌ no more props
+  return <UserProfile />; // ✅ Use the context-consuming component here
 }
 
 export default UserInfo;
