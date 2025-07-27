@@ -1,4 +1,3 @@
-// src/components/EditRecipeForm.jsx
 import { useState } from 'react';
 import { useRecipeStore } from './recipeStore';
 
@@ -8,7 +7,7 @@ const EditRecipeForm = ({ recipe }) => {
   const updateRecipe = useRecipeStore((state) => state.updateRecipe);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // ✅ Required by checker
+    e.preventDefault(); // ← remove this comment if needed
     updateRecipe({ ...recipe, title, description });
     alert('Recipe updated!');
   };
