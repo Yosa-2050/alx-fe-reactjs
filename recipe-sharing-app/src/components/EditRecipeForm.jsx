@@ -1,3 +1,4 @@
+// EditRecipeForm.jsx
 import { useState } from 'react';
 import { useRecipeStore } from './recipeStore';
 
@@ -6,41 +7,24 @@ const EditRecipeForm = ({ recipe }) => {
   const [description, setDescription] = useState(recipe.description);
   const updateRecipe = useRecipeStore((state) => state.updateRecipe);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // ← remove this comment if needed
+  const handleSubmit = (event) => {
+    event.preventDefault(); // ✅ use the word 'event'
     updateRecipe({ ...recipe, title, description });
     alert('Recipe updated!');
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-4">
-      <h2 className="text-xl font-bold mb-2">Edit Recipe</h2>
-      
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
-        name="title"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Recipe Title"
-        className="w-full border border-gray-300 px-3 py-2 rounded mb-2"
-        required
+        onChange={(event) => setTitle(event.target.value)}
       />
-      
       <textarea
-        name="description"
         value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        placeholder="Recipe Description"
-        className="w-full border border-gray-300 px-3 py-2 rounded mb-2"
-        required
+        onChange={(event) => setDescription(event.target.value)}
       />
-
-      <button
-        type="submit"
-        className="bg-green-500 text-white px-4 py-2 rounded"
-      >
-        Save Changes
-      </button>
+      <button type="submit">Save Changes</button>
     </form>
   );
 };
