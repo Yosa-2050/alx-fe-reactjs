@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecipeStore } from './recipeStore';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';  // <-- Correct import with uppercase 'L'
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.filteredRecipes);
