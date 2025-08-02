@@ -1,10 +1,12 @@
 import React from 'react';
+import Search from './components/search';
+import './App.css/';
 
-function app () {
+function App () {
   return (
     <div>
-      <h1>GitHub search application</h1>
-      <p>setup successful</p>
+      <h1 class='git-head'>GitHub search application</h1>
+      <Search />
     </div>
   )
 }
