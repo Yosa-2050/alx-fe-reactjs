@@ -26,7 +26,7 @@ function Search() {
   };
 
   return (
-    <div class="Search-container">
+    <div className="Search-container">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
