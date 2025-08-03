@@ -33,7 +33,7 @@ function Search() {
     <div className="max-w-xl mx-auto p-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-100 shadow-md rounded-lg p-4 mb-6"
+        className="bg-sky-950 shadow-md rounded-lg p-4 mb-6"
       >
         <h2 className="text-xl font-semibold mb-4">Advanced GitHub User Search</h2>
         <input
@@ -59,7 +59,7 @@ function Search() {
         />
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-200"
+          className="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600 transition duration-200"
         >
           Search
         </button>
