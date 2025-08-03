@@ -7,15 +7,18 @@ export const fetchAdvancedUserData = async (username, location, minRepos) => {
   if (location) query += `location:${location} `;
   if (minRepos) query += `repos:>=${minRepos}`;
 
-  const response = await axios.get(`https://api.github.com/search/users`, {
-    params: { q: query.trim() },
-  });
+  
+  const response = await axios.get(`https://api.github.com/search/users?q=${query.trim()}`);
 
-  // Fetch details for each user
+  
   const detailedUsers = await Promise.all(
     response.data.items.map(async (user) => {
-      const userDetails = await axios.get(user.url);
-      return { ...user, ...userDetails.data };
+      try {
+        const userDetails = await axios.get(user.url);
+        return { ...user, ...userDetails.data };
+      } catch {
+        return user; 
+      }
     })
   );
 
