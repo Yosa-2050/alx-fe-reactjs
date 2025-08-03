@@ -1,11 +1,12 @@
 import React from 'react';
-import Search from "./components/Search";
 import './App.css';
+import Search from "./components/Search";
+
 
 function App () {
   return (
     <div>
-      <h1 class='git-head'>GitHub search application</h1>
+      <h1 className='git-head'>GitHub search application</h1>
       <Search />
     </div>
   )
