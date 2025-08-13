@@ -9,7 +9,7 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div className="p-6 max-w-7xl mx-auto">
+    <div className="p-6 max-w-7xl mx-auto grid-cols-1 md">
       <h1 className="text-3xl font-bold text-center">
         Recipe Sharing Platform
       </h1>
