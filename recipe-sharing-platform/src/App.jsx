@@ -1,19 +1,21 @@
-import { useState } from 'react'
-import React from 'react'
-import './index.css'  // only import tailwind css here
+import React from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Homepage from "./components/HomePage";
+import './index.css'; 
 
-function App() {
-  const [count, setCount] = useState(0)
 
+
+
+
+
+export default function App() {
   return (
-    <>
-      <div>
-        <h1 className='text-green-900 text-2xl font-bold'>
-          go to hell brooo woooooo!!!!!
-        </h1>
-      </div>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        </Routes>
+    </Router>
+  );
 }
 
-export default App
+

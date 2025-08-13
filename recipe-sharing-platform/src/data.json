@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://www.freepik.com/free-ai-image/delicious-pasta-plate_59582604.htm#fromView=search&page=1&position=12&uuid=725beeed-f4a3-4e56-9019-8d635a552576&query=Spaghetti+Carbonara"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://www.freepik.com/free-photo/chicken-skewers-with-slices-apples-chili_7698211.htm#fromView=search&page=1&position=23&uuid=5a65bd59-412a-4212-8796-4b554855f005&query=Chicken+Tikka+Masala"
+  },
+   {
+    "id": 3,
+    "title": "Vegetable Stir Fry",
+    "summary": "Fresh vegetables sautéed in soy sauce and garlic for a quick healthy meal.",
+    "image": "https://www.freepik.com/free-photo/stir-fry-chicken-zucchini-sweet-peppers-green-onion_6932928.htm#fromView=search&page=1&position=15&uuid=3ec6dcec-94d7-44b1-ad99-8483ce2b5783&query=Vegetable+Stir+Fry"
+  }
+]
