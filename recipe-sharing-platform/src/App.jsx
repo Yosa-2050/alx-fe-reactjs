@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
  import Homepage from "./components/HomePage";
  import RecipeDetail from "./components/RecipeDetail";
 import './App.css'; 
+import AddRecipePage from "./pages/AddRecipePage";
+import AddRecipeForm from "./components/AddRecipeForm";
 
 
 export default function App() {
@@ -11,6 +13,7 @@ export default function App() {
        <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
+        <Route path="/add-recipe" element={<AddRecipePage />} />
         </Routes>
      </Router>
   );
