@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';  
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 const fetchPosts = async () => {
@@ -7,31 +7,36 @@ const fetchPosts = async () => {
 };
 
 function PostsComponent() {
-  const { data, error, isLoading, refetch } = useQuery(
-    ['posts'],
-    fetchPosts,
-    {
-      staleTime: 5000, // cache fresh for 5s
-      cacheTime: 1000 * 60 * 5, // keep cache for 5 min
-    }
-  );
+  const { data, error, isLoading, refetch } = useQuery({
+    queryKey: ['posts'],
+    queryFn: fetchPosts,
+    staleTime: 1000 * 60, // cache data for 1 minute
+  });
 
   if (isLoading) return <p>Loading posts...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+
+  if (error instanceof Error) return <p style={{ color: 'red' }}>Error: {error.message}</p>;
 
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold">Posts</h1>
+    <div style={{ padding: '1rem' }}>
+      <h1 style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>Posts</h1>
       <button
         onClick={() => refetch()}
-        className="mt-2 px-3 py-1 bg-blue-500 text-white rounded"
+        style={{
+          marginTop: '0.5rem',
+          padding: '0.25rem 0.75rem',
+          backgroundColor: '#2563eb',
+          color: 'white',
+          borderRadius: '0.25rem',
+          cursor: 'pointer',
+        }}
       >
         Refresh
       </button>
-      <ul className="mt-4">
+      <ul style={{ marginTop: '1rem', listStyle: 'none', padding: 0 }}>
         {data.map((post) => (
-          <li key={post.id} className="border-b py-2">
-            <h2 className="font-semibold">{post.title}</h2>
+          <li key={post.id} style={{ borderBottom: '1px solid #ccc', padding: '0.5rem 0' }}>
+            <h2 style={{ fontWeight: '600' }}>{post.title}</h2>
             <p>{post.body}</p>
           </li>
         ))}
